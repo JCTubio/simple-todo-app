@@ -36,6 +36,7 @@ Fork the repository into your account. Once your code is ready, send a pull-requ
 * dynamic-ui (web-sockets...?)
 * using the `made in Travix` technologies
 * ... Impress us!
+<<<<<<< HEAD
 
 # How-to-deploy
 
@@ -43,3 +44,5 @@ Fork the repository into your account. Once your code is ready, send a pull-requ
 * npm install
 * npm run build2
 * npm run serve
+=======
+>>>>>>> 08c2b8c94ae9a9762221f8526d9e5218b0561d06
