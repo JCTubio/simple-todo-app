@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build2": "babel src/server/server.js -d dist",
-    "serve": "node dist/server.js"
+    "buildServer": "babel src/server/server.js -d dist",
+    "serve": "npm run buildServer && node dist/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

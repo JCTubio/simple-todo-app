@@ -41,5 +41,4 @@ Fork the repository into your account. Once your code is ready, send a pull-requ
 
 * Run the following commands on the console
 * npm install
-* npm run build2
 * npm run serve
