@@ -1,0 +1,29 @@
+export const defaultState = {
+  tasks: [
+    {
+      id: '1',
+      title: 'todo1',
+      description: 'Do something!',
+    },
+    {
+      id: '2',
+      title: 'todo2',
+      description: 'Do something!',
+    },
+    {
+      id: '3',
+      title: 'todo3',
+      description: 'Do something!',
+    },
+    {
+      id: '4',
+      title: 'todo4',
+      description: 'Do something!',
+    },
+    {
+      id: '5',
+      title: 'todo5',
+      description: 'Do something!',
+    },
+  ],
+}
