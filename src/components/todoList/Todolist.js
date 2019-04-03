@@ -11,10 +11,7 @@ export default function Todolist(props) {
   return (
     <Fragment>
       <h1 className='todo-list-title'>Awesome ToDo List</h1>
-      <button onClick={() => props.handleNewTodoCreation(todoItemToCreate)}>
-        Add new todo item
-      </button>
-      {/*<Link className="new-task-button" to="/task/create">Create new task</Link>*/}
+      <Link className="new-task-button" to="/task/create">Create new task</Link>
       {map(props.tasks, (task) => {
         return (
           <Link to={`/task/${task.id}`} key={task.id}>
