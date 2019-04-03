@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import getTodoList from '../../store/selectors/GetTodoList'
 import * as actions from '../../store/actions/Actions'
+import UpdateItemForm from './UpdateItemForm'
 
 function mapStateToProps(state, ownProps) {
   let id = ownProps.match.params.id
@@ -15,9 +15,9 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
   const id = ownProps.match.params.id
   return {
-    updateTodoItem(item){
+    updateTodoItem(item) {
       dispatch(actions.updateTodoItem(item))
-    }
+    },
   }
 }
 
@@ -44,23 +44,13 @@ class UpdateItemFormContainer extends Component {
 
   render() {
     return (
-      <div>
-        <label htmlFor='title'>Title:</label>
-        <input type='text' onChange={this.handleTitleChange} value={this.state.title} />
-        <label htmlFor='description'>Description:</label>
-        <textarea
-          rows='2'
-          name='description'
-          onChange={this.handleDescriptionChange}
-          value={this.state.description}
-        />
-        <Link to='/tasks'>
-          <button> Back</button>
-        </Link>
-        <Link to='/tasks'>
-          <button onClick={this.handleSubmitForm} value='Submit' >Submit</button>
-        </Link>
-      </div>
+      <UpdateItemForm
+        title={this.state.title}
+        description={this.state.description}
+        handleTitleChange={this.handleTitleChange}
+        handleDescriptionChange={this.handleDescriptionChange}
+        handleSubmitForm={this.handleSubmitForm}
+      />
     )
   }
 }
