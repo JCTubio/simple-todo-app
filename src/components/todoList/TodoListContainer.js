@@ -1,41 +1,51 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import map from 'lodash/map'
-import TodoItem from '../todoItem/TodoItem'
+import Todolist from './Todolist'
+import getTodoList from '../../store/selectors/GetTodoList'
+import { requestAddTodoItem, deleteTodoItem } from '../../store/actions/Actions'
 
 function mapStateToProps(state) {
   return {
-    tasks: state.tasks,
+    tasks: getTodoList(state),
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createNewTodo(todoItemToCreate) {
+      dispatch(requestAddTodoItem(todoItemToCreate))
+    },
+    deleteTodoItem(id) {
+      dispatch(deleteTodoItem(id))
+    },
   }
 }
 
 class TodoListContainer extends Component {
   constructor(props) {
     super(props)
-    this.handleTodoItemButtonPressed = this.handleTodoItemButtonPressed.bind(this)
-    console.log(props)
+    this.handleTodoItemButtonPressed = this.handleTodoItemButtonPressed.bind(
+      this
+    )
   }
-  handleTodoItemButtonPressed = () => {
-    console.log("Button pressed!")
+  handleTodoItemButtonPressed = (e, id) => {
+    e.preventDefault()
+    this.props.deleteTodoItem(id)
   }
 
   render() {
     return (
-      <Fragment>
-        {map(this.props.tasks, (task) => {
-          return (
-            <TodoItem
-              key={task.id}
-              title={task.title}
-              description={task.description}
-              statusButton={this.handleTodoItemButtonPressed}
-            />
-          )
-        })}
-      </Fragment>
+      <Todolist
+        tasks={this.props.tasks}
+        handleTodoItemButtonPressed={this.handleTodoItemButtonPressed}
+        handleNewTodoCreation={this.props.createNewTodo}
+      />
     )
   }
 }
 
-const ConnectedTodoListContainer = connect(mapStateToProps)(TodoListContainer)
+const ConnectedTodoListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoListContainer)
 export default ConnectedTodoListContainer
