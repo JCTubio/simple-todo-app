@@ -22,11 +22,9 @@ export default function NewItemForm({
       <Link to='/tasks'>
         <button> Back</button>
       </Link>
-      <Link to='/tasks'>
-        <button onClick={handleSubmitForm} value='Submit'>
-          Submit
-        </button>
-      </Link>
+      <button onClick={handleSubmitForm} value='Submit'>
+        Submit
+      </button>
     </div>
   )
 }

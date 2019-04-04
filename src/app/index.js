@@ -10,12 +10,16 @@ import UpdateItemFormContainer from '../components/updateItemForm/UpdateItemForm
 class App extends Component {
   render() {
     return (
-      <Router history={history}>
-        <Provider store={store}>
-          <div className='App'>
+      <Provider store={store}>
+        <div className='App'>
+          <Router history={history}>
             <Switch>
               <Route exact path='/tasks' render={() => <TodoListContainer />} />
-              <Route exact path='/task/create' render={() => <NewItemFormContainer />} />
+              <Route
+                exact
+                path='/task/create'
+                render={() => <NewItemFormContainer />}
+              />
               <Route
                 exact
                 path='/task/:id'
@@ -25,9 +29,9 @@ class App extends Component {
               />
               <Redirect to='/tasks' />
             </Switch>
-          </div>
-        </Provider>
-      </Router>
+          </Router>
+        </div>
+      </Provider>
     )
   }
 }

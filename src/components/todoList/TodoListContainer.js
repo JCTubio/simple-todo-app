@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Todolist from './Todolist'
 import getTodoList from '../../store/selectors/GetTodoList'
-import { requestAddTodoItem, deleteTodoItem } from '../../store/actions/Actions'
+import {
+  requestAddTodoItem,
+  deleteTodoItem,
+  requestGetTodoItems,
+} from '../../store/actions/Actions'
 
 function mapStateToProps(state) {
   return {
@@ -12,6 +17,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    getTodoList() {
+      dispatch(requestGetTodoItems())
+    },
     createNewTodo(todoItemToCreate) {
       dispatch(requestAddTodoItem(todoItemToCreate))
     },
@@ -24,6 +32,9 @@ function mapDispatchToProps(dispatch) {
 class TodoListContainer extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      tasks: [],
+    }
     this.handleTodoItemButtonPressed = this.handleTodoItemButtonPressed.bind(
       this
     )
@@ -31,6 +42,18 @@ class TodoListContainer extends Component {
   handleTodoItemButtonPressed = (e, id) => {
     e.preventDefault()
     this.props.deleteTodoItem(id)
+  }
+
+  componentDidMount() {
+    this.props.getTodoList()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.tasks !== prevProps.tasks) {
+      this.setState({
+        tasks: this.props.tasks,
+      })
+    }
   }
 
   render() {
@@ -44,8 +67,8 @@ class TodoListContainer extends Component {
   }
 }
 
-const ConnectedTodoListContainer = connect(
+const ConnectedTodoListContainer = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoListContainer)
+)(TodoListContainer))
 export default ConnectedTodoListContainer

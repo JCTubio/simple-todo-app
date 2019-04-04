@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NewItemForm from './NewItemForm'
 import { requestAddTodoItem } from '../../store/actions/Actions'
@@ -49,8 +50,8 @@ class NewItemFormContainer extends Component {
   }
 }
 
-const ConnectedNewItemFormContainer = connect(
+const ConnectedNewItemFormContainer = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewItemFormContainer)
+)(NewItemFormContainer))
 export default ConnectedNewItemFormContainer

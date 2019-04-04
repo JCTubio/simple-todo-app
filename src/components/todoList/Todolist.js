@@ -4,10 +4,6 @@ import map from 'lodash/map'
 import TodoItem from '../todoItem/TodoItem'
 
 export default function Todolist(props) {
-  const todoItemToCreate = {
-    title: 'New todo item',
-    description: 'Fresh!',
-  }
   return (
     <Fragment>
       <h1 className='todo-list-title'>Awesome ToDo List</h1>
