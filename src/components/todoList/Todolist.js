@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import map from 'lodash/map'
 import TodoItem from '../todoItem/TodoItem'
+import './todoList.scss'
 
 export default function Todolist(props) {
   return (
@@ -10,7 +11,7 @@ export default function Todolist(props) {
       <Link className="new-task-button" to="/task/create">Create new task</Link>
       {map(props.tasks, (task) => {
         return (
-          <Link to={`/task/${task.id}`} key={task.id}>
+          <Link className='link-to-todo' to={`/task/${task.id}`} key={task.id}>
             <TodoItem
               title={task.title}
               description={task.description}

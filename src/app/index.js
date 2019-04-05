@@ -6,6 +6,7 @@ import { history } from '../store/history'
 import TodoListContainer from '../components/todoList/TodoListContainer'
 import NewItemFormContainer from '../components/newItemForm/NewItemFormContainer'
 import UpdateItemFormContainer from '../components/updateItemForm/UpdateItemFormContainer'
+import './app.scss'
 
 class App extends Component {
   render() {

@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "buildServer": "babel src/server/server.js -d dist",
+    "buildServer": "npx babel src/server/server.js -d dist",
     "serve": "npm run buildServer && node dist/server.js",
     "start-dev": "concurrently \"npm run serve\" \"npm start\" "
   },
@@ -37,10 +37,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
+    "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
-    "babel-cli": "^6.26.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",

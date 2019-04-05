@@ -1,0 +1,40 @@
+@import "../../app/variables.scss";
+
+.todo-item {
+    @include customBorders();
+    background-color: $paperColor;
+    height: 10vh;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 10vh;
+    .todo-item-content {
+        width: 85%;
+        display: inline-block;
+        h3 {
+            font-family: $font;
+            padding-bottom: 0.5vh;
+            overflow: hidden;
+            border-right: 1vw solid $paperColor;
+        }
+        p {
+            font-family: $font;
+            overflow: hidden;
+            border-right: 1vw solid $paperColor;
+        }
+    }
+    .item-delete-button {
+        @include removeDefaultButton();
+        font-size: 1rem;
+        color: white;
+        background-color: lightcoral;
+        border-radius: 3px;
+        width: wrap;
+        height: auto;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
+        padding: 0.5vh 0.7vh 0.5vh 0.7vh;
+        top: 2vw;
+        right: 2vw;
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../app/variables";
+
+.new-item-form {
+    @include customBorders();
+    padding: 0 0 0 0;
+    .new-task-title {
+        @include customBorders();
+        box-shadow: 0 0 0.7vw 0.01vw $borderColor;
+        background-color: $paperColor;
+        text-align: center;
+        font-family: $font;
+        font-size: $bigFont;
+    }
+}
