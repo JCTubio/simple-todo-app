@@ -1,24 +1,24 @@
 @import "../../app/variables.scss";
-  
+
 .todo-list-title {
-    background-color: $paperColor;
-    @include customBorders();
-    box-shadow: 0 0 0.7vw 0.01vw $borderColor;
-    font-family: $font;
-    font-size: $bigFont;
-    text-align: center;
-    margin-bottom: 1vh;
+  background-color: $paperColor;
+  @include customBorders();
+  box-shadow: 0 0 0.7vw 0.01vw $borderColor;
+  font-family: $font;
+  font-size: $bigFont;
+  text-align: center;
+  margin-bottom: 1vh;
 }
 .new-task-button {
-    @include customBorders();
-    @include removeDefaultLink();
-    background-color: $paperColor;
-    width: 100%;
-    display: inline-block;
-    font-family: $font;
-    font-size: $mediumFont;
-    font-weight: bold;
+  @include customBorders();
+  @include removeDefaultLink();
+  background-color: $paperColor;
+  width: 100%;
+  display: inline-block;
+  font-family: $font;
+  font-size: $mediumFont;
+  font-weight: bold;
 }
 .link-to-todo {
-    @include removeDefaultLink();
+  @include removeDefaultLink();
 }

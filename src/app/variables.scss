@@ -1,38 +1,50 @@
 $font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$bigFont: 24px;
+$bigFont: 26px;
 
-$mediumFont: 14px;
+$mediumFont: 20px;
 
-$smallFont: 10px;
+$smallFont: 16px;
 
 $sandColor: #FFEECC;
 
-$borderColor: #CCCCCC;
+$borderColor: #DDDDDD;
 
-$paperColor:  #F8F7ED;
+$paperColor: #F8F7ED;
 
 $softGreyColor: #F2F2F2;
 
 @mixin customBorders() {
-    border-radius: 5px;
-    padding: 2vw 3vw 2vw 3vw;
-    margin: 0 0 0.5vh 0;
+  border-radius: 5px;
+  padding: 2vw 3vw 2vw 3vw;
+  margin: 0 0 0.5vh 0;
 }
 
 @mixin removeDefaultLink() {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-@mixin removeDefaultButton(){
+@mixin removeDefaultButton() {
+  font-family: $font;
+  background-color: $paperColor;
+  border: none;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+}
+
+@mixin buttonStyle(){
+    @include removeDefaultButton();
     font-family: $font;
-    background-color: $paperColor;
-    border: none;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-    overflow: visible;
-    text-transform: none;
-    -webkit-appearance: button;
+    font-size: $mediumFont;
+    text-align: center;
+    background-color: inherit;
+    padding: 1vh 2vh 1vh 2vh;
+    border: 1px solid;
+    border-radius: 15vw;
+    margin: 0 0 0 3vw;
 }

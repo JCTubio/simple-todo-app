@@ -1,20 +1,20 @@
 @import "./variables";
 
 * {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    box-sizing: border-box;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: $sandColor;
+  background-color: $sandColor;
 }
 
 .App {
-    background-color: $softGreyColor;
-    border: 1px solid $borderColor;
-    border-radius: 5px;
-    margin: 2px 2px 2px 2px;
-    padding: 1vw 1vw 1vw 1vw;
-    overflow-y: auto;
+  background-color: $softGreyColor;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  margin: 2px 2px 2px 2px;
+  padding: 1vw 1vw 1vw 1vw;
+  overflow-y: auto;
 }

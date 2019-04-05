@@ -1,14 +1,65 @@
 @import "../../app/variables";
 
-.new-item-form {
+.item-form {
+  @include customBorders();
+  padding: 0 0 0 0;
+  h1 {
     @include customBorders();
-    padding: 0 0 0 0;
-    .new-task-title {
-        @include customBorders();
-        box-shadow: 0 0 0.7vw 0.01vw $borderColor;
-        background-color: $paperColor;
-        text-align: center;
-        font-family: $font;
-        font-size: $bigFont;
+    box-shadow: 0 0 0.7vw 0.01vw $borderColor;
+    background-color: $paperColor;
+    text-align: center;
+    font-family: $font;
+    font-size: $bigFont;
+    margin-bottom: 1vh;
+  }
+  .task-title {
+    @include customBorders();
+    position: relative;
+  }
+  label {
+    display: block;
+    font-family: $font;
+    font-size: $mediumFont;
+  }
+  input {
+    border: none;
+    border-style: none;
+    @include customBorders();
+    display: block;
+    font-family: $font;
+    font-size: $mediumFont;
+    width: 100%;
+    min-height: 5vh;
+  }
+  .task-description {
+    @include customBorders();
+    position: relative;
+
+    label {
+      display: block;
+      font-family: $font;
+      font-size: $mediumFont;
     }
+    textarea {
+      border: none;
+      border-style: none;
+      @include customBorders();
+      display: block;
+      font-family: $font;
+      font-size: $smallFont;
+      width: 100%;
+      min-height: 10vh;
+      word-wrap: break-word;
+    }
+  }
+  .back-button {
+    @include buttonStyle();
+    color: #aaaaaa;
+    border-color: #aaaaaa;
+  }
+  .submit-button {
+    @include buttonStyle();
+    color: #6abf3f;
+    border-color: #6abf3f;
+  }
 }

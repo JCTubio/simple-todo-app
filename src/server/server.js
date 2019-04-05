@@ -148,7 +148,7 @@ app.delete('/task/:id/delete', (req, res) => {
         message: 'Updated successfully',
       })
     } else {
-      return es.status(404).json({
+      return res.status(404).json({
         message: 'Not found',
       })
     }
