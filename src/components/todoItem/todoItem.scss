@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/mixins.scss";
 
 .todo-item {
   @include customBorders();
@@ -7,11 +8,18 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 10vh;
+  
+  @include for-tablet {
+    padding: 1.5vw 1.5vw 1.5vw 1.5vw;
+  }
+  @include for-desktop {
+    padding: 1vw 1vw 1vw 1vw;
+  }
   .todo-item-content {
     width: 85%;
     display: inline-block;
     h3 {
-      max-height: 3vh;
+      max-height: 1.3em;
       font-family: $font;
       padding-bottom: 0.5vh;
       overflow: hidden;
@@ -21,13 +29,14 @@
       border-right: 1vw solid $paperColor;
     }
     p {
-      max-height: 7vh;
+      max-height: 2.8em;
       font-family: $font;
       overflow: hidden;
       border-right: 1vw solid $paperColor;
       word-wrap: break-word;
     }
   }
+
   .item-delete-button {
     @include removeDefaultButton();
     font-size: 1rem;
@@ -39,8 +48,21 @@
     display: inline-block;
     text-align: center;
     position: absolute;
-    padding: 0.3vh 0.7vh 0.3vh 0.7vh;
+    padding: 1vh 1.5vh 1vh 1.5vh;
     top: 2vw;
     right: 2vw;
+    @include for-tablet {
+      padding: 0.9vh 1.2vh 0.9vh 1.2vh;
+      top: 1.5vw;
+      right: 1.5vw;
+    }
+    @include for-desktop {
+      padding: 0.8vh 1vh 0.8vh 1vh;
+      top: 0.5vw;
+      right: 0.5vw;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

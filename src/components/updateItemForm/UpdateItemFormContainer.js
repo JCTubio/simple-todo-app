@@ -33,6 +33,7 @@ class UpdateItemFormContainer extends Component {
         title: '',
         description: '',
       },
+      isShowingSubmissionError: false
     }
     this.handleTitleChange = this.handleTitleChange.bind(this)
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
@@ -40,7 +41,7 @@ class UpdateItemFormContainer extends Component {
   }
 
   handleTitleChange = (event) => {
-    this.setState({ task: { ...this.state.task, title: event.target.value } })
+    this.setState({ task: { ...this.state.task, title: event.target.value }, isShowingSubmissionError: false })
   }
 
   handleDescriptionChange = (event) => {
@@ -50,8 +51,12 @@ class UpdateItemFormContainer extends Component {
   }
 
   handleSubmitForm = () => {
-    this.props.updateTodoItem(this.state.task)
-    this.setState({ redirect: true })
+    if(this.state.task.title.length > 0){
+      this.props.updateTodoItem(this.state.task)
+      this.setState({ redirect: true })
+    } else {
+      this.setState({ isShowingSubmissionError: true });
+    }
   }
 
   componentDidMount() {
@@ -75,6 +80,7 @@ class UpdateItemFormContainer extends Component {
       <UpdateItemForm
         title={this.state.task.title}
         description={this.state.task.description}
+        isShowingSubmissionError={this.state.isShowingSubmissionError}
         handleTitleChange={this.handleTitleChange}
         handleDescriptionChange={this.handleDescriptionChange}
         handleSubmitForm={this.handleSubmitForm}

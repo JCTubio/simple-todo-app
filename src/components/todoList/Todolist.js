@@ -9,6 +9,7 @@ export default function Todolist(props) {
     <Fragment>
       <h1 className='todo-list-title'>Awesome ToDo List</h1>
       <Link className="new-task-button" to="/task/create">Create new task</Link>
+      <div className="todo-items-container">
       {map(props.tasks, (task) => {
         return (
           <Link className='link-to-todo' to={`/task/${task.id}`} key={task.id}>
@@ -21,6 +22,7 @@ export default function Todolist(props) {
           </Link>
         )
       })}
+      </div>
     </Fragment>
   )
 }

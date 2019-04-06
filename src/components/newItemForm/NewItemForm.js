@@ -7,14 +7,23 @@ export default function NewItemForm({
   description,
   handleTitleChange,
   handleDescriptionChange,
-  handleSubmitForm
+  handleSubmitForm,
+  isShowingSubmissionError
 }) {
   return (
     <div className="item-form">
       <h1>New task</h1>
       <div className="task-title">
-        <label htmlFor="title">Title:</label>
-        <input type="text" onChange={handleTitleChange} value={title} placeholder="Your awesome title goes here!" />
+        <label htmlFor="title">
+          Title:{<span style={{ color: "lightcoral" }}>*</span>}
+        </label>
+        <input
+          className={isShowingSubmissionError ? "error" : ""}
+          type="text"
+          onChange={handleTitleChange}
+          value={title}
+          placeholder="Your awesome title goes here!"
+        />
       </div>
       <div className="task-description">
         <label htmlFor="description">Description:</label>
@@ -29,7 +38,11 @@ export default function NewItemForm({
       <Link to="/tasks">
         <button className="back-button"> Back</button>
       </Link>
-      <button className="submit-button" onClick={handleSubmitForm} value="Submit">
+      <button
+        className="submit-button"
+        onClick={handleSubmitForm}
+        value="Submit"
+      >
         Submit
       </button>
     </div>

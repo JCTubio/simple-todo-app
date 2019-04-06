@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/mixins.scss";
 
 .todo-list-title {
   background-color: $paperColor;
@@ -18,7 +19,39 @@
   font-family: $font;
   font-size: $mediumFont;
   font-weight: bold;
+  
+  @include for-tablet {
+    padding: 1.5vw 1.5vw 1.5vw 1.5vw;
+  }
+  @include for-desktop {
+    padding: 1vw 1vw 1vw 1vw;
+  }
 }
 .link-to-todo {
   @include removeDefaultLink();
+  
+  @include for-tablet {
+    width: 49.8%;
+  }
+  @include for-desktop {
+    width: 24.8%;
+    margin-right: 0.2%;
+    &:nth-of-type(4) {
+      margin-right: 0;
+    }
+  }
+}
+
+.todo-items-container {
+  width: 100%;
+  @include for-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  @include for-desktop {
+    justify-content: flex-start ;
+  }
 }

@@ -7,14 +7,22 @@ export default function UpdateItemForm({
   description,
   handleTitleChange,
   handleDescriptionChange,
-  handleSubmitForm
+  handleSubmitForm,
+  isShowingSubmissionError
 }) {
   return (
     <div className="item-form">
       <h1>Update task</h1>
       <div className="task-title">
-        <label htmlFor="title">Title:</label>
-        <input type="text" onChange={handleTitleChange} value={title} />
+        <label htmlFor="title">
+          Title:{<span style={{ color: "lightcoral" }}>*</span>}
+        </label>
+        <input
+          type="text"
+          className={isShowingSubmissionError ? "error" : ""}
+          onChange={handleTitleChange}
+          value={title}
+        />
       </div>
       <div className="task-description">
         <label htmlFor="description">Description:</label>
