@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The new item form The presentational container renders as expected 1`] = `
+<div
+  className="item-form"
+>
+  <h1>
+    New task
+  </h1>
+  <div
+    className="task-title"
+  >
+    <label
+      htmlFor="title"
+    >
+      Title:
+      <span
+        style={
+          Object {
+            "color": "lightcoral",
+          }
+        }
+      >
+        *
+      </span>
+    </label>
+    <input
+      className=""
+      onChange={[Function]}
+      placeholder="Your awesome title goes here!"
+      type="text"
+      value="Title"
+    />
+  </div>
+  <div
+    className="task-description"
+  >
+    <label
+      htmlFor="description"
+    >
+      Description:
+    </label>
+    <textarea
+      name="description"
+      onChange={[Function]}
+      placeholder="And here you should provide a great description for your task!"
+      rows="2"
+      value="Description"
+    />
+  </div>
+  <a
+    href="/tasks"
+    onClick={[Function]}
+  >
+    <button
+      className="back-button"
+    >
+       Back
+    </button>
+  </a>
+  <button
+    className="submit-button"
+    onClick={[Function]}
+    value="Submit"
+  >
+    Submit
+  </button>
+</div>
+`;

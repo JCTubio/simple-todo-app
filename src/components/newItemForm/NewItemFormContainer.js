@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import NewItemForm from "./NewItemForm";
 import { requestAddTodoItem } from "../../store/actions/Actions";
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {};
 }
 
-function mapDispatchToProps(dispatch, ownProps) {
+export function mapDispatchToProps(dispatch, ownProps) {
   return {
     createNewTodo(todoItemToCreate) {
       dispatch(requestAddTodoItem(todoItemToCreate));
@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   };
 }
 
-class NewItemFormContainer extends Component {
+export class NewItemFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {

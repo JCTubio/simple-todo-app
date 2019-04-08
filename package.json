@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "buildServer": "npx babel src/server/server.js -d dist",
     "serve": "npm run buildServer && node dist/server.js",
@@ -39,10 +39,19 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.0.0",
+    "jest-cli": "^24.0.0",
+    "nodemon": "^1.18.10",
+    "react-test-renderer": "^16.0.0"
   }
 }
